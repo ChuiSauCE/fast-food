@@ -1,0 +1,34 @@
+.ribbon
+	margin-top: 200px
+	.mynav
+		display: flex
+		-webkit-box-pack: justify;
+		justify-content: space-between;
+		.head-logo
+			position: relative
+			height: 200px
+			width: 200px
+			top: -75px
+			border-radius: 50%
+			background: $shadowedred
+			ul
+				position: relative
+				list-style: none
+				padding: 0
+				li
+					position: absolute
+					height: 100px
+					right: 0
+					left: 0
+					transform-origin: bottom center
+				@for $i from 0 through 12
+					li:nth-child(#{$i + 1})
+						transform: rotate(-82deg + (180 / 13 * $i))
+		&:hover
+			li
+				animation: turn-em 3000ms ease-in-out infinite
+@keyframes turn-em
+	0%
+		transform: rotate(+0)
+	100%
+		transform: rotate(+360deg)

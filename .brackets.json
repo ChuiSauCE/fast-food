@@ -1,0 +1,17 @@
+{
+    "path": {
+        "assets/css/main.sass": {
+            "sass.enabled": true,
+            "sass.options": {
+                "outputDir": "../css/",
+                "imagePath": null,
+                "sourceComments": false,
+                "outputStyle": "compressed"
+            },
+            "eqFTP.projectsPaths": [
+                "C:/xampp/htdocs/kaplanslidetry"
+            ],
+            "linting.collapsed": false
+        }
+    }
+}

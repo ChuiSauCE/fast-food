@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "_path.css",
+  "sources": [
+    "_path.scss"
+  ],
+  "sourcesContent": [],
+  "mappings": "AAAA;gCACgC;AAEhC,UAAU;EACR,WAAW,EAAE,aAAc;EAC3B,GAAG,EAAE,oEAAG;EACR,GAAG,EAAE,oEAAG,CAAkE,2BAAM,EAC9E,sEAAG,CAAoE,eAAM,EAC7E,qEAAG,CAAmE,cAAM,EAC5E,oEAAG,CAAkE,kBAAM,EAC3E,oEAAG,CAAkE,aAAM;EAE7E,WAAW,EAAE,MAAO;EACpB,UAAU,EAAE,MAAO",
+  "names": []
+}
