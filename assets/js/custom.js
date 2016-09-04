@@ -15,4 +15,27 @@ $(document).ready(function () {
 		$(this).find('.dropdown-menu').first().stop(true, true).slideUp();
 		$(this).removeClass("open");
 	});
+	$('.cool-imgs img').hover(function(){
+		// $(".cool-imgs img").each(function(){
+		// 		var tmatrix = $(this).css('transform');
+		// 		var values = tmatrix.split('(')[1].split(')')[0].split(',')
+		// 		var a = values[0];
+		// 		var b = values[1];
+		// 		var angle = angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+		// 		$(this).css({'transform': 'rotate('+ angle + 10 +'deg)  translateX(0px)'});
+    // });
+		var tmatrix = $(this).css('transform');
+		var values = tmatrix.split('(')[1].split(')')[0].split(',')
+		var a = values[0];
+		var b = values[1];
+		var angle = angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+		$(this).css({'transform': 'rotate('+ angle + 10 +'deg) translateX(50px)'});
+	}, function(){
+		var tmatrix = $(this).css('transform');
+		var values = tmatrix.split('(')[1].split(')')[0].split(',')
+		var a = values[0];
+		var b = values[1];
+		var angle = angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+		$(this).css({'transform': 'rotate('+ angle +'deg) translateX(0px)'});
+	});
 });
