@@ -1,35 +1,66 @@
-.ribbon
-	margin-top: 200px
-	.mynav
-		display: flex
-		-webkit-box-pack: justify
-		justify-content: space-between
+.nav-cont
+	padding-top: 350px
+	.ribbon
 		position: relative
-		.head-logo
+		.mynav
+			display: flex
+			-webkit-box-pack: justify
+			justify-content: space-between
 			position: relative
-			height: 200px
-			width: 200px
-			top: -75px
-			border-radius: 50%
-			background: $shadowedred
-			ul
+			.head-logo
 				position: relative
-				list-style: none
-				padding: 0
-				li
-					position: absolute
-					height: 100px
-					right: 0
-					left: 0
-					transform-origin: bottom center
-				@for $i from 0 through 12
-					li:nth-child(#{$i + 1})
-						transform: rotate(-90deg + (180 / 12 * $i))
-		&:hover
-			li
-				animation: turn-em 3000ms ease-in-out infinite
-@keyframes turn-em
+				height: 200px
+				width: 200px
+				top: -75px
+				border-radius: 50%
+				background: $themered
+				box-shadow: 0px 0px 34px 4px rgba(0,0,0,0.75)
+				ul
+					position: relative
+					list-style: none
+					padding: 0
+					height: 100%
+					li
+						font-size: 26px
+						position: absolute
+						height: 50%
+						right: 0
+						left: 0
+						transform-origin: bottom center
+						line-height: 120%
+					@for $i from 0 through 12
+						li:nth-child(#{$i + 1})
+							transform: rotate(-90deg + (26 * $i))
+			.navleft, .navright
+				ul
+					list-style: none
+					padding: 0
+					display: flex
+					justify-content: center
+					font-size: 22px
+					li
+						margin: 5px 0px
+						height: 40px
+						line-height: 40px
+						padding: 0 5px
+						width: 150px
+						&:hover
+							cursor: pointer
+							div
+								background: $themeyellow
+								color: $red
+								padding: 0 5px
+								animation: navhover 300ms ease-in-out forwards
+						div
+							padding: 0 5px
+						.homep
+							background: $themeyellow
+							color: $red
+							padding: 0 5px
+@keyframes navhover
 	0%
-		transform: rotate(+0)
+		transform: scale(0.1) translateY(20px)
+	75%
+		transform: scale(1.2) translateY(0px)
 	100%
-		transform: rotate(+360deg)
+		transform: scale(1.0) translateY(0px)

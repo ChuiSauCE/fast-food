@@ -1,0 +1,19 @@
+.nav-cont
+	position: relative
+	.holder
+		height: 150px
+		width: 350px
+		position: absolute
+		transform-origin: left center
+		bottom: -50px
+		left: 50%
+		transition: all 1000ms ease-in-out
+		@for $i from 0 through 9
+			&:nth-child(#{$i + 1})
+				transform: rotate(20deg + (36 * $i))
+		img
+			height: 100%
+			width: 100%
+			border-radius: 50px
+			box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75)
+			border: 2px solid $themered
