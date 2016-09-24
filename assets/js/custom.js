@@ -283,9 +283,7 @@ $(document).ready(function () {
 			url: "assets/contents/"+ pagestuff +".html",
 			type: 'get',
 			dataType: 'html',
-			async: true,
 			success: function(data){
-				alert(data);
 				$(".mypopup .content").html(data);
 				$(".mypopup .content .closemark").click(function(){
 					$(".mypopup .content").addClass("removethecontent");
