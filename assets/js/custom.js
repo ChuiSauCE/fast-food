@@ -278,13 +278,14 @@ $(document).ready(function () {
 		$(card10).css({'transform': 'rotate('+ pos10 +'deg)'});
 	});
 	$(".mynav .tpop, .cards .holder").click(function(){
-		var pagestuff = $(this).children('span.hide').text()
+		var pagestuff = $(this).children('span.hide').text();
 		$.ajax({
 			url: "assets/contents/"+ pagestuff +".html",
 			type: 'get',
 			dataType: 'html',
-			async: false,
+			async: true,
 			success: function(data){
+				alert(data);
 				$(".mypopup .content").html(data);
 				$(".mypopup .content .closemark").click(function(){
 					$(".mypopup .content").addClass("removethecontent");

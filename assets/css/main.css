@@ -9177,7 +9177,8 @@ a {
   line-height: 30px;
   text-align: center;
   border-radius: 5px;
-  transition: 300ms; }
+  transition: 300ms;
+  z-index: 10; }
   .mypopup .closemark:hover {
     cursor: pointer;
     color: #f8a219; }
@@ -9213,7 +9214,7 @@ a {
     color: #f8a219; }
 
 .mypopup .hakkimizda {
-  padding: 10px; }
+  padding: 0 50px; }
   .mypopup .hakkimizda h2 {
     width: 350px;
     text-align: center;
@@ -9221,6 +9222,12 @@ a {
     color: wheat;
     border-bottom: 2px solid;
     border-radius: 50px; }
+  .mypopup .hakkimizda p {
+    font-size: 16px; }
+    .mypopup .hakkimizda p.phone {
+      font-size: 20px; }
+  .mypopup .hakkimizda .littit {
+    color: white; }
 
 .nav-cont .login {
   position: absolute;
