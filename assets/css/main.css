@@ -9212,6 +9212,16 @@ a {
     background: #bd1b11;
     color: #f8a219; }
 
+.mypopup .hakkimizda {
+  padding: 10px; }
+  .mypopup .hakkimizda h2 {
+    width: 350px;
+    text-align: center;
+    margin: 10px auto;
+    color: wheat;
+    border-bottom: 2px solid;
+    border-radius: 50px; }
+
 .nav-cont .login {
   position: absolute;
   top: 20px;

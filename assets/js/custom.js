@@ -285,8 +285,17 @@ $(document).ready(function () {
 			dataType: 'html',
 			async: false,
 			success: function(data){
-				alert(data)
 				$(".mypopup .content").html(data);
+				$(".mypopup .content .closemark").click(function(){
+					$(".mypopup .content").addClass("removethecontent");
+					setTimeout(function(){
+						$(".mypopup").addClass("closin");
+					},500);
+					setTimeout(function(){
+						$(".mypopup").removeClass("closin").removeClass("open");
+					$(".mypopup .content").removeClass("bringthecontent").removeClass("removethecontent");
+					},1000);
+				});
 			}
 		});
 		$(".mypopup").addClass("open");
@@ -294,15 +303,4 @@ $(document).ready(function () {
 			$(".mypopup .content").addClass("bringthecontent");
 		},1000);
 	});
-	$(".mypopup .content").click(function(){
-		$(".mypopup .content").addClass("removethecontent");
-		setTimeout(function(){
-			$(".mypopup").addClass("closin");
-		},500);
-		setTimeout(function(){
-			$(".mypopup").removeClass("closin").removeClass("open");
-		$(".mypopup .content").removeClass("bringthecontent").removeClass("removethecontent");
-		},1000);
-	});
-
 });
