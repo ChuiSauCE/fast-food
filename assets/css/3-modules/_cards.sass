@@ -17,3 +17,23 @@
 			border-radius: 50px
 			box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75)
 			border: 2px solid $themered
+.mynav
+	.navcenter
+		.cool-imgs
+			img
+				position: absolute
+				height: 200px
+				top: -125px
+				z-index: -1
+				transition: all 1000ms ease-in-out
+				transform-origin: left center
+				&.bring-up
+					animation: bring-up 3000ms ease-in-out forwards
+		@for $i from 0 through 19
+			img:nth-child(#{$i + 1})
+				transform: rotate(0deg + (360 / 19 * $i))
+@keyframes bring-up
+	0%
+		transform: translateX(0)
+	100%
+		transform: translateX(30px)

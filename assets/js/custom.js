@@ -285,12 +285,13 @@ $(document).ready(function () {
 			dataType: 'html',
 			async: false,
 			success: function(data){
+				alert(data)
 				$(".mypopup .content").html(data);
 			}
 		});
 		$(".mypopup").addClass("open");
 		setTimeout(function(){
-			$(".mypopup .content").addClass("bringthecontent");	
+			$(".mypopup .content").addClass("bringthecontent");
 		},1000);
 	});
 	$(".mypopup .content").click(function(){
@@ -303,5 +304,5 @@ $(document).ready(function () {
 		$(".mypopup .content").removeClass("bringthecontent").removeClass("removethecontent");
 		},1000);
 	});
-	
+
 });
