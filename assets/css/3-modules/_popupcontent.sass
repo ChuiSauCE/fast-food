@@ -1,4 +1,17 @@
 .mypopup
+	.stump
+		position: absolute
+		text-align: center
+		width: 600px
+		color: red
+		font-size: 64px
+		margin-top: 135px
+		border: 10px dashed
+		border-radius: 25px
+		left: 100px
+		z-index: 10
+		transform: rotate(-30deg)
+		background: rgba(1,1,1,0.5)
 	.closemark
 		position: absolute
 		top: 10px
@@ -62,4 +75,180 @@
 		&.phone
 			font-size: 20px
 	.littit
+		color: white
+.mypopup .galery
+	.glyphicon
+		color: $themeyellow
+.mypopup .menuler
+	display: flex
+	flex-wrap: wrap
+	.menu-card
+		width: 200px
+		height: 250px
+		overflow: hidden
+		box-sizing: border-box
+		@for $i from 1 through 8
+			&:nth-child(#{$i})
+				background: url('../img/menus/'+$i+'.jpg')
+				background-size: cover
+		.card-desc
+			position: relative
+			height: 100%
+			width: 100%
+			background: rgba(1,1,1,0.7)
+			top: 100%
+			transition: 500ms ease-in-out
+			text-align: center
+			padding: 30px 10px 0 10px
+			h3
+				margin: 0 0 10px 0
+			li
+				text-align: left
+			li:last-child
+				text-align: right
+				list-style: none
+				font-size: 16px
+		&:hover .card-desc
+			top: 0%
+		.addtocard
+			background: $themeyellow
+			color: $red
+			height: 40px
+			line-height: 40px
+			border-radius: 10px
+			transition: 300ms
+			font-weight: bold
+			&:hover
+				cursor: pointer
+				background: $red
+				color: $themeyellow
+.mypopup .icecekler
+	display: flex
+	flex-wrap: wrap
+	.bottle
+		background:  radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.4) 100%)
+		height: 400px
+		padding-top: 30px
+		margin: 0 0 0 25px
+		border-radius: 5px
+	.order
+		margin-top: 50px
+		width: 375px
+		height: 400px
+		text-align: center
+		.adet-box
+			position: relative
+			width: 140px
+			margin: 0 auto
+			span
+				position: absolute
+				display: inline-block
+				right: 20px
+			input
+				width: 140px
+		.price
+			width: 140px
+			text-align: right
+			display: inline-block
+		input, textarea, select, option
+			width: 140px
+			background: none
+			border-radius: 5px
+			border: none
+			border-bottom: 1px solid $themeyellow
+			margin-bottom: 10px
+			padding-left: 10px
+			height: 20px
+			line-height: 20px
+			color: $themeyellow
+			&::-webkit-input-placeholder
+				color: $themeyellow
+			&:focus
+				outline: none
+		.addtocard
+			background: $themeyellow
+			color: $red
+			width: 140px
+			height: 40px
+			line-height: 40px
+			border-radius: 10px
+			margin: 20px auto
+			transition: 300ms
+			font-weight: bold
+			&:hover
+				cursor: pointer
+				background: $red
+				color: $themeyellow
+	.brands
+		width: 100%
+		padding: 10px 0
+		margin: 10px 25px
+		border-radius: 5px
+		display: flex
+		justify-content: space-around
+		background: $themeyellow
+		&>div
+			z-index: 3
+		.active-b
+			position: absolute
+			width: 160px
+			left: 40px
+			height: 50px
+			background-color: rgba(1,1,1,0.2)
+			transition: all 1000ms
+			z-index: 1
+		img
+			&:hover
+				cursor: pointer
+.mypopup .kampanya
+	h2
+		width: 380px
+	p
+		padding-bottom: 5px
+		margin-bottom: 0
+		&.crossed
+			text-decoration: line-through
+	.addtocard
+		margin-top: 15px
+.mypopup .iletisim
+	padding: 10px
+	h3
+		color: white
+		text-align: center
+	input, textarea, select, option
+		width: 140px
+		background: none
+		border-radius: 5px
+		border: none
+		border-bottom: 1px solid $themeyellow
+		margin-bottom: 10px
+		padding-left: 10px
+		height: 20px
+		line-height: 20px
+		color: $themeyellow
+		&::-webkit-input-placeholder
+			color: $themeyellow
+		&:focus
+			outline: none
+	.addtocard
+		background: $themeyellow
+		color: $red
+		width: 140px
+		height: 40px
+		line-height: 40px
+		border-radius: 10px
+		margin: 10px auto
+		transition: 300ms
+		font-weight: bold
+		text-align: center
+		&:hover
+			cursor: pointer
+			background: $red
+			color: $themeyellow
+	textarea
+		resize: none
+		width: 100%
+		height: 290px
+		border: 1px solid
+	h4
 		color: white

@@ -8984,7 +8984,7 @@ a {
 .nav-cont {
   position: relative; }
   .nav-cont .holder {
-    height: 150px;
+    height: 175px;
     width: 350px;
     position: absolute;
     transform-origin: left center;
@@ -9018,61 +9018,6 @@ a {
       box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.75);
       border: 2px solid #750700; }
 
-.mynav .navcenter .cool-imgs img {
-  position: absolute;
-  height: 200px;
-  top: -125px;
-  z-index: -1;
-  transition: all 1000ms ease-in-out;
-  transform-origin: left center; }
-  .mynav .navcenter .cool-imgs img.bring-up {
-    animation: bring-up 3000ms ease-in-out forwards; }
-.mynav .navcenter img:nth-child(1) {
-  transform: rotate(0deg); }
-.mynav .navcenter img:nth-child(2) {
-  transform: rotate(18.94737deg); }
-.mynav .navcenter img:nth-child(3) {
-  transform: rotate(37.89474deg); }
-.mynav .navcenter img:nth-child(4) {
-  transform: rotate(56.84211deg); }
-.mynav .navcenter img:nth-child(5) {
-  transform: rotate(75.78947deg); }
-.mynav .navcenter img:nth-child(6) {
-  transform: rotate(94.73684deg); }
-.mynav .navcenter img:nth-child(7) {
-  transform: rotate(113.68421deg); }
-.mynav .navcenter img:nth-child(8) {
-  transform: rotate(132.63158deg); }
-.mynav .navcenter img:nth-child(9) {
-  transform: rotate(151.57895deg); }
-.mynav .navcenter img:nth-child(10) {
-  transform: rotate(170.52632deg); }
-.mynav .navcenter img:nth-child(11) {
-  transform: rotate(189.47368deg); }
-.mynav .navcenter img:nth-child(12) {
-  transform: rotate(208.42105deg); }
-.mynav .navcenter img:nth-child(13) {
-  transform: rotate(227.36842deg); }
-.mynav .navcenter img:nth-child(14) {
-  transform: rotate(246.31579deg); }
-.mynav .navcenter img:nth-child(15) {
-  transform: rotate(265.26316deg); }
-.mynav .navcenter img:nth-child(16) {
-  transform: rotate(284.21053deg); }
-.mynav .navcenter img:nth-child(17) {
-  transform: rotate(303.15789deg); }
-.mynav .navcenter img:nth-child(18) {
-  transform: rotate(322.10526deg); }
-.mynav .navcenter img:nth-child(19) {
-  transform: rotate(341.05263deg); }
-.mynav .navcenter img:nth-child(20) {
-  transform: rotate(360deg); }
-
-@keyframes bring-up {
-  0% {
-    transform: translateX(0); }
-  100% {
-    transform: translateX(30px); } }
 .mypopup {
   display: none; }
   .mypopup .content {
@@ -9165,6 +9110,19 @@ a {
   100% {
     transform: scale(0.1) translateY(60px) translateX(-1000px);
     opacity: 0; } }
+.mypopup .stump {
+  position: absolute;
+  text-align: center;
+  width: 600px;
+  color: red;
+  font-size: 64px;
+  margin-top: 135px;
+  border: 10px dashed;
+  border-radius: 25px;
+  left: 100px;
+  z-index: 10;
+  transform: rotate(-30deg);
+  background: rgba(1, 1, 1, 0.5); }
 .mypopup .closemark {
   position: absolute;
   top: 10px;
@@ -9227,6 +9185,204 @@ a {
     .mypopup .hakkimizda p.phone {
       font-size: 20px; }
   .mypopup .hakkimizda .littit {
+    color: white; }
+
+.mypopup .galery .glyphicon {
+  color: #f8a219; }
+
+.mypopup .menuler {
+  display: flex;
+  flex-wrap: wrap; }
+  .mypopup .menuler .menu-card {
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+    box-sizing: border-box; }
+    .mypopup .menuler .menu-card:nth-child(1) {
+      background: url("../img/menus/1.jpg");
+      background-size: cover; }
+    .mypopup .menuler .menu-card:nth-child(2) {
+      background: url("../img/menus/2.jpg");
+      background-size: cover; }
+    .mypopup .menuler .menu-card:nth-child(3) {
+      background: url("../img/menus/3.jpg");
+      background-size: cover; }
+    .mypopup .menuler .menu-card:nth-child(4) {
+      background: url("../img/menus/4.jpg");
+      background-size: cover; }
+    .mypopup .menuler .menu-card:nth-child(5) {
+      background: url("../img/menus/5.jpg");
+      background-size: cover; }
+    .mypopup .menuler .menu-card:nth-child(6) {
+      background: url("../img/menus/6.jpg");
+      background-size: cover; }
+    .mypopup .menuler .menu-card:nth-child(7) {
+      background: url("../img/menus/7.jpg");
+      background-size: cover; }
+    .mypopup .menuler .menu-card:nth-child(8) {
+      background: url("../img/menus/8.jpg");
+      background-size: cover; }
+    .mypopup .menuler .menu-card .card-desc {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      background: rgba(1, 1, 1, 0.7);
+      top: 100%;
+      transition: 500ms ease-in-out;
+      text-align: center;
+      padding: 30px 10px 0 10px; }
+      .mypopup .menuler .menu-card .card-desc h3 {
+        margin: 0 0 10px 0; }
+      .mypopup .menuler .menu-card .card-desc li {
+        text-align: left; }
+      .mypopup .menuler .menu-card .card-desc li:last-child {
+        text-align: right;
+        list-style: none;
+        font-size: 16px; }
+    .mypopup .menuler .menu-card:hover .card-desc {
+      top: 0%; }
+    .mypopup .menuler .menu-card .addtocard {
+      background: #f8a219;
+      color: #bd1b11;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 10px;
+      transition: 300ms;
+      font-weight: bold; }
+      .mypopup .menuler .menu-card .addtocard:hover {
+        cursor: pointer;
+        background: #bd1b11;
+        color: #f8a219; }
+
+.mypopup .icecekler {
+  display: flex;
+  flex-wrap: wrap; }
+  .mypopup .icecekler .bottle {
+    background: radial-gradient(ellipse at center, white 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.4) 100%);
+    height: 400px;
+    padding-top: 30px;
+    margin: 0 0 0 25px;
+    border-radius: 5px; }
+  .mypopup .icecekler .order {
+    margin-top: 50px;
+    width: 375px;
+    height: 400px;
+    text-align: center; }
+    .mypopup .icecekler .order .adet-box {
+      position: relative;
+      width: 140px;
+      margin: 0 auto; }
+      .mypopup .icecekler .order .adet-box span {
+        position: absolute;
+        display: inline-block;
+        right: 20px; }
+      .mypopup .icecekler .order .adet-box input {
+        width: 140px; }
+    .mypopup .icecekler .order .price {
+      width: 140px;
+      text-align: right;
+      display: inline-block; }
+    .mypopup .icecekler .order input, .mypopup .icecekler .order textarea, .mypopup .icecekler .order select, .mypopup .icecekler .order option {
+      width: 140px;
+      background: none;
+      border-radius: 5px;
+      border: none;
+      border-bottom: 1px solid #f8a219;
+      margin-bottom: 10px;
+      padding-left: 10px;
+      height: 20px;
+      line-height: 20px;
+      color: #f8a219; }
+      .mypopup .icecekler .order input::-webkit-input-placeholder, .mypopup .icecekler .order textarea::-webkit-input-placeholder, .mypopup .icecekler .order select::-webkit-input-placeholder, .mypopup .icecekler .order option::-webkit-input-placeholder {
+        color: #f8a219; }
+      .mypopup .icecekler .order input:focus, .mypopup .icecekler .order textarea:focus, .mypopup .icecekler .order select:focus, .mypopup .icecekler .order option:focus {
+        outline: none; }
+    .mypopup .icecekler .order .addtocard {
+      background: #f8a219;
+      color: #bd1b11;
+      width: 140px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 10px;
+      margin: 20px auto;
+      transition: 300ms;
+      font-weight: bold; }
+      .mypopup .icecekler .order .addtocard:hover {
+        cursor: pointer;
+        background: #bd1b11;
+        color: #f8a219; }
+  .mypopup .icecekler .brands {
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 25px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    background: #f8a219; }
+    .mypopup .icecekler .brands > div {
+      z-index: 3; }
+    .mypopup .icecekler .brands .active-b {
+      position: absolute;
+      width: 160px;
+      left: 40px;
+      height: 50px;
+      background-color: rgba(1, 1, 1, 0.2);
+      transition: all 1000ms;
+      z-index: 1; }
+    .mypopup .icecekler .brands img:hover {
+      cursor: pointer; }
+
+.mypopup .kampanya h2 {
+  width: 380px; }
+.mypopup .kampanya p {
+  padding-bottom: 5px;
+  margin-bottom: 0; }
+  .mypopup .kampanya p.crossed {
+    text-decoration: line-through; }
+.mypopup .kampanya .addtocard {
+  margin-top: 15px; }
+
+.mypopup .iletisim {
+  padding: 10px; }
+  .mypopup .iletisim h3 {
+    color: white;
+    text-align: center; }
+  .mypopup .iletisim input, .mypopup .iletisim textarea, .mypopup .iletisim select, .mypopup .iletisim option {
+    width: 140px;
+    background: none;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 1px solid #f8a219;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    height: 20px;
+    line-height: 20px;
+    color: #f8a219; }
+    .mypopup .iletisim input::-webkit-input-placeholder, .mypopup .iletisim textarea::-webkit-input-placeholder, .mypopup .iletisim select::-webkit-input-placeholder, .mypopup .iletisim option::-webkit-input-placeholder {
+      color: #f8a219; }
+    .mypopup .iletisim input:focus, .mypopup .iletisim textarea:focus, .mypopup .iletisim select:focus, .mypopup .iletisim option:focus {
+      outline: none; }
+  .mypopup .iletisim .addtocard {
+    background: #f8a219;
+    color: #bd1b11;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    margin: 10px auto;
+    transition: 300ms;
+    font-weight: bold;
+    text-align: center; }
+    .mypopup .iletisim .addtocard:hover {
+      cursor: pointer;
+      background: #bd1b11;
+      color: #f8a219; }
+  .mypopup .iletisim textarea {
+    resize: none;
+    width: 100%;
+    height: 290px;
+    border: 1px solid; }
+  .mypopup .iletisim h4 {
     color: white; }
 
 .nav-cont .login {
