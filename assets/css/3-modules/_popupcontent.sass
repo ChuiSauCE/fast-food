@@ -3,7 +3,7 @@
 		position: absolute
 		text-align: center
 		width: 600px
-		color: red
+		color: $red
 		font-size: 64px
 		margin-top: 135px
 		border: 10px dashed
@@ -47,20 +47,29 @@
 				width: 100px
 				color: white
 				border-bottom: 2px solid white
-		.addtocard
-			background: $themeyellow
-			color: $red
-			width: 50%
-			height: 40px
-			line-height: 40px
-			border-radius: 10px
-			margin-top: 20px
-			transition: 300ms
-			font-weight: bold
-			&:hover
-				cursor: pointer
-				background: $red
-				color: $themeyellow
+		.buttons
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+			.addtocart , .adding, .added
+				position: absolute
+				background: $themeyellow
+				color: $red
+				display: inline-block
+				padding: 10px 10px
+				border-radius: 10px
+				margin-top: 20px
+				transition: 300ms
+				font-weight: bold
+				transform-origin: bottom right
+				&:hover
+					cursor: pointer
+					background: $red
+					color: $themeyellow
+				&.addin
+					animation: addin 500ms ease-in-out forwards
+				&.addout
+					animation: addout 500ms ease-in-out forwards
 .mypopup .hakkimizda
 	padding: 0 50px
 	h2
@@ -89,7 +98,7 @@
 		box-sizing: border-box
 		@for $i from 1 through 8
 			&:nth-child(#{$i})
-				background: url('../img/menus/'+$i+'.jpg')
+				background: url('../img/menus/#{$i}.jpg')
 				background-size: cover
 		.card-desc
 			position: relative
@@ -110,18 +119,28 @@
 				font-size: 16px
 		&:hover .card-desc
 			top: 0%
-		.addtocard
-			background: $themeyellow
-			color: $red
-			height: 40px
-			line-height: 40px
-			border-radius: 10px
-			transition: 300ms
-			font-weight: bold
-			&:hover
-				cursor: pointer
-				background: $red
-				color: $themeyellow
+		.buttons
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+			.addtocart , .adding, .added
+				position: absolute
+				background: $themeyellow
+				color: $red
+				display: inline-block
+				padding: 10px 10px
+				border-radius: 10px
+				transition: 300ms
+				font-weight: bold
+				transform-origin: bottom right
+				&:hover
+					cursor: pointer
+					background: $red
+					color: $themeyellow
+				&.addin
+					animation: addin 500ms ease-in-out forwards
+				&.addout
+					animation: addout 500ms ease-in-out forwards
 .mypopup .icecekler
 	display: flex
 	flex-wrap: wrap
@@ -149,7 +168,7 @@
 		.price
 			width: 140px
 			text-align: right
-			display: inline-block
+			margin: 0 auto
 		input, textarea, select, option
 			width: 140px
 			background: none
@@ -165,20 +184,28 @@
 				color: $themeyellow
 			&:focus
 				outline: none
-		.addtocard
-			background: $themeyellow
-			color: $red
-			width: 140px
-			height: 40px
-			line-height: 40px
-			border-radius: 10px
-			margin: 20px auto
-			transition: 300ms
-			font-weight: bold
-			&:hover
-				cursor: pointer
-				background: $red
-				color: $themeyellow
+		.buttons
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+			.addtocart , .adding, .added
+				position: absolute
+				background: $themeyellow
+				color: $red
+				display: inline-block
+				padding: 10px 10px
+				border-radius: 10px
+				transition: 300ms
+				font-weight: bold
+				transform-origin: bottom right
+				&:hover
+					cursor: pointer
+					background: $red
+					color: $themeyellow
+				&.addin
+					animation: addin 500ms ease-in-out forwards
+				&.addout
+					animation: addout 500ms ease-in-out forwards
 	.brands
 		width: 100%
 		padding: 10px 0
@@ -208,7 +235,7 @@
 		margin-bottom: 0
 		&.crossed
 			text-decoration: line-through
-	.addtocard
+	.addtocart
 		margin-top: 15px
 .mypopup .iletisim
 	padding: 10px
@@ -230,12 +257,11 @@
 			color: $themeyellow
 		&:focus
 			outline: none
-	.addtocard
+	.addtocart
 		background: $themeyellow
 		color: $red
-		width: 140px
-		height: 40px
-		line-height: 40px
+		display: inline-block
+		padding: 10px 10px
 		border-radius: 10px
 		margin: 10px auto
 		transition: 300ms
@@ -252,3 +278,18 @@
 		border: 1px solid
 	h4
 		color: white
+
+@keyframes addout
+	0%
+		opacity: 1
+		transform: rotate(0) scale(1)
+	100%
+		opacity: 0
+		transform: rotate(90deg) scale(0.1)
+@keyframes addin
+	0%
+		opacity: 0
+		transform: rotate(-90deg) scale(0.1)
+	100%
+		opacity: 1
+		transform: rotate(0) scale(1)

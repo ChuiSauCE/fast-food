@@ -24,7 +24,7 @@
 						8.99 TL
 					</p>
 			</div>
-			<div class="addtocard">
+			<div class="addtocart">
 				Sepete Ekle
 			</div>
 		</center>

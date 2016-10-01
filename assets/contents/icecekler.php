@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <div class="closemark">
 	X
 </div>
@@ -37,19 +38,28 @@
 			<input type="number" value="1"><span>Adet</span>
 		</div>
 		<p class="price">5 TL</p>
-		<div class="addtocard">
-			Sepete Ekle
-		</div>
+			<div class="buttons">
+				<?php
+				if(isset($_SESSION['userid'])){ ?>
+				<div class="addtocart">Sepete Ekle</div>
+				<div class="adding hide"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i><span class="sr-only">Loading...</span></div>
+				<div class="added hide">Ürün Sepete Eklendi!</div>
+				<?php } else { ?>
+				<div class="cantadd">Alışveriş Yapmak İçin Lütfen Üye Olunuz...</div>
+				<?php
+				}
+				?>
+			</div>
 	</div>
 </div>
 <script>
 $(document).ready(function () {
-		$('.adet-box input').on('change',function(){
-		var quantity = $(this).val();
-	  var Total=  quantity * 5;
-		$('p.price').text(Total + 'TL');
-		});
-		$('.adet-box input').on('keyup',function(){
+	$('.adet-box input').on('change',function(){
+	var quantity = $(this).val();
+	var Total=  quantity * 5;
+	$('p.price').text(Total + 'TL');
+	});
+	$('.adet-box input').on('keyup',function(){
 		var quantity = $(this).val();
 	  var Total=  quantity * 5;
 		$('p.price').text(Total + 'TL');
@@ -105,10 +115,10 @@ $(document).ready(function () {
 		}
 		if(bnum == 6){
 			$('#type').html('<option value="61" selected>Vişne</option>');
-			$('#type').append('<option value="61">Kayısı</option>');
-			$('#type').append('<option value="61">Portakal</option>');
-			$('#type').append('<option value="61">Elma</option>');
-			$('#type').append('<option value="61">Karışık</option>');
+			$('#type').append('<option value="62">Kayısı</option>');
+			$('#type').append('<option value="63">Portakal</option>');
+			$('#type').append('<option value="64">Elma</option>');
+			$('#type').append('<option value="65">Karışık</option>');
 		}
 		$('.bottle img').fadeOut(function(){
 			$(this).attr("src",iurl).fadeIn();

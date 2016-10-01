@@ -1,3 +1,17 @@
+<?php 
+session_start();
+include('assets/php/connection.php');
+if(isset($_GET['logout'])){
+	session_destroy();
+	header('Location: index.php');
+}
+if(isset($_SESSION['userid'])){
+	$userid = mysqli_real_escape_string($link,$_SESSION['userid']);
+	$query = "SELECT * FROM carts WHERE userid = '$userid'";
+	$results = mysqli_query($link,$query);
+	$checkcart = mysqli_num_rows($results);
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +29,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
 <body>
 	<div class="container nav-cont">
 		<div class="login">
-			<div class="sign-up">
+			<div class="sign-up <?php if(isset($_SESSION['userid'])){echo "hide";}; ?>">
 				Kaydol
 				<div class="sign-up-form">
 					<form action="" method="POST" role="form">
@@ -29,20 +42,50 @@
 						<input type="email" placeholder="E-mail">
 						<input type="password" placeholder="Şifre">
 						<textarea name="" id="" cols="30" rows="10" placeholder="Adresiniz"></textarea>
-						<button class="btn">Kaydol</button>
+						<div class="btn">Kaydol</div>
 					</form>
 				</div>
 			</div>
-			<div class="sign-in">
-				Giriş
+			<div class="sign-in <?php if(isset($_SESSION['userid'])){echo "hide";}; ?>">
+				<span>Giriş</span>
 				<div class="sign-in-form">
 					<form action="" method="POST" role="form">
 						<input type="email" placeholder="E-mail">
 						<input type="password" placeholder="Şifre">
-						<button class="btn">Giriş Yap</button>
+						<div class="btn">Giriş Yap</div>
 					</form>
 				</div>
 			</div>
+			<div class="logged-in <?php if(!isset($_SESSION['userid'])){echo "hide";}; ?>">
+				<span class="uname"><?php if(isset($_SESSION['userid'])){echo $_SESSION['username'] ." ". $_SESSION['usersurname'].'<i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="checkcart">'.$checkcart.'</span>';}; ?></span>
+				<div class="usercart">
+					<h4>Sepetim</h4>
+					<ul class="my-cart">
+						<?php
+						if(isset($_SESSION['userid'])){
+							include('assets/php/connection.php');
+							$userid = $_SESSION['userid'];
+							$query = "SELECT * FROM carts WHERE userid = '$userid'";
+							$results = mysqli_query($link,$query);
+							$checkcart = mysqli_num_rows($results);
+							$total = 0;
+							if($checkcart > 0){
+								while($row = mysqli_fetch_assoc($results)){
+									echo "<li><div class='removep'>X </div>".$row['pname']."<span>".$row['price']."TL</span></li>";
+									$total = $total + $row['price'];
+								}
+								echo "</ul>";
+								echo '<div class="total"><span>Toplam: <span class="tprice">'.$total.'</span>TL</span></div>';
+								echo '<div class="buttons"><div class="btn">Sipariş Ver</div><div class="btn">Hesabım</div></div>';
+							} else {
+								echo "<li class='text-center'>Sepetiniz de Ürün Bulunmamaktadır...</li>";
+								echo '</ul><div class="buttons"><div class="btn">Hesabım</div></div>';
+							}
+						}
+						?>
+				</div>
+			</div>
+			<div class="logout-btn <?php if(!isset($_SESSION['userid'])){echo "hide";}; ?>"><a href="index.php?logout=1"><i class="fa fa-sign-out" aria-hidden="true"></i></a></div>
 		</div>
 		<div class="cards">
 		<div class="holder"><span class="hide">p1</span><img src="assets\img\cards\1.jpg" alt="">
@@ -84,6 +127,7 @@
 				</div>
 				<div class="navcenter">
 					<div class="head-logo">
+						<img src="assets/img/logo.gif" alt="">
 						<ul>
 							<li>İ</li>
 							<li>S</li>
